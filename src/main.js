@@ -19,7 +19,7 @@ const createScene = () => {
     camera.attachControl(canvas, true);
     scene.activeCamera = camera;
 
-    const light = new BABYLON.HemisphericLight('light', new BABYLON.Vector3(0, 5, 0), scene);
+    const light = new BABYLON.HemisphericLight('light', new BABYLON.Vector3(5, 5, 0), scene);
     light.intensity = 1.0;
 
     const pistaFinal = criarPista(scene);
