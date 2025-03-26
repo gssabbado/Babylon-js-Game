@@ -49,7 +49,10 @@ export function criarCarro(scene) {
     wheelRB.position.y = 2.735;
     wheelRB.rotation.x = -Math.PI / 2;
 
-    const wheelRF = wheelRB.clone("wheelRF");
+    const teste = BABYLON.MeshBuilder.CreateCylinder("teste", { diameterBottom: 1.125, diameterTop: 2,height: 0.55 })
+    teste.position.y = 7;
+
+   /* const wheelRF = wheelRB.clone("wheelRF");
     wheelRF.position.x = 1.5;
 
     const wheelLB = wheelRB.clone("wheelLB");
@@ -58,7 +61,7 @@ export function criarCarro(scene) {
     const wheelLF = wheelRF.clone("wheelLF");
     wheelLF.position.z = 1.75;
     wheelLF.position.x = 1.5;
-
+*/
     // fazer o csg com dois cilindros e algo no meio
 
 
