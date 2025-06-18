@@ -1,4 +1,5 @@
 # Babylon-js-Game
 
-# how to run
-# npm run dev
+how to run
+npm run dev
+
