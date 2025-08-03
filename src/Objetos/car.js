@@ -1,7 +1,7 @@
 import * as BABYLON from '@babylonjs/core';
 import earcut from 'earcut';
 
-export function criarCarro(scene) {
+export function createCar(scene) {
     /*const groundMaterial = new BABYLON.StandardMaterial('groundMaterial', scene);
     groundMaterial.diffuseColor = new BABYLON.Color3(0.3, 0.3, 0.7);
     groundMaterial.emissiveColor = new BABYLON.Color3(0.3, 0.3, 0.3);
@@ -32,7 +32,7 @@ export function criarCarro(scene) {
 
 
 
-    // ------ Rodas do carShapero ------
+    // ------ Rodas do carShape ------
 
     const wheelRB = BABYLON.MeshBuilder.CreateCylinder("wheelRB", { diameter: 1.125, height: 0.55 })
     //wheelRB.parent = carShape;
@@ -52,7 +52,7 @@ export function criarCarro(scene) {
     wheelLF.position.x = 1.5;
     
 
-    // --------  Farol do carShapero
+    // --------  Farol do carShape
     
     const headlightL = BABYLON.MeshBuilder.CreateCylinder("headlightL", { diameterBottom: 1.125, diameterTop: 2, height: 0.55 })
     headlightL.scaling.z *= 0.3;

@@ -1,4 +1,4 @@
-export function iniciarMovimentoPistas(scene, pistaModelo) {
+export function startMovementTracks(scene, pistaModelo) {
     const numPistas = 7;
     const pistaSpeed = 0.3;
     const espacamento = 15;

@@ -1,7 +1,7 @@
 import * as BABYLON from '@babylonjs/core';
-import { criarPista } from './Objetos/pista.js';
-import { iniciarMovimentoPistas } from './Controles/controlePista.js';
-import { criarCarro } from './Objetos/carro.js';
+import { createTrack} from './Objetos/track.js';
+import { startMovementTracks } from './Controles/trackControl.js';
+import { createCar } from './Objetos/car.js';
 import { CarControls} from './Controles/CarControl.js'
 
 await BABYLON.InitializeCSG2Async({
@@ -29,14 +29,14 @@ const createScene = () => {
     const light = new BABYLON.HemisphericLight('light', new BABYLON.Vector3(5, 5, 0), scene);
     light.intensity = 1.0;
     
-    const pistaFinal = criarPista(scene);
-    const carroFinal = criarCarro(scene);
+    const trackGameplay = createTrack(scene);
+    const carGameplay = createCar(scene);
 
 
-    iniciarMovimentoPistas(scene, pistaFinal);
-    pistaFinal.dispose();
+    startMovementTracks(scene, trackGameplay);
+    trackGameplay.dispose();
 
-    CarControls(scene, carroFinal);
+    CarControls(scene, carGameplay);
     
     return scene;
 };
