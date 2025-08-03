@@ -3,6 +3,9 @@ import { createTrack} from './Objetos/track.js';
 import { startMovementTracks } from './Controles/trackControl.js';
 import { createCar } from './Objetos/car.js';
 import { CarControls} from './Controles/CarControl.js'
+import { createTraps } from './Objetos/traps.js';
+import { createCoordinateGizmo } from './Objetos/gizmo.js';
+
 
 await BABYLON.InitializeCSG2Async({
   manifoldUrl: "https://unpkg.com/manifold-3d@2.5.1"
@@ -23,21 +26,23 @@ const createScene = () => {
     camera2.rotation.y = Math.PI/2;
     camera2.rotation.x = Math.PI/6;
     camera2.attachControl(canvas, true);
-    scene.activeCamera = camera2;
+    scene.activeCamera = camera;
     
     
     const light = new BABYLON.HemisphericLight('light', new BABYLON.Vector3(5, 5, 0), scene);
     light.intensity = 1.0;
     
     const trackGameplay = createTrack(scene);
-    const carGameplay = createCar(scene);
+//    const carGameplay = createCar(scene);
+//    var traps = createTraps(scene);
 
 
-    startMovementTracks(scene, trackGameplay);
-    trackGameplay.dispose();
+//    startMovementTracks(scene, trackGameplay);
+//    trackGameplay.dispose();
 
-    CarControls(scene, carGameplay);
-    
+//    CarControls(scene, carGameplay);
+//    const coordinateGizmo = createCoordinateGizmo(scene);
+
     return scene;
 };
 

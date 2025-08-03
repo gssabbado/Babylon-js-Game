@@ -35,7 +35,6 @@ export function createCar(scene) {
     // ------ Rodas do carShape ------
 
     const wheelRB = BABYLON.MeshBuilder.CreateCylinder("wheelRB", { diameter: 1.125, height: 0.55 })
-    //wheelRB.parent = carShape;
     wheelRB.position.z = -0.25;
     wheelRB.position.x = -1.5;
     wheelRB.position.y = 2.735;
