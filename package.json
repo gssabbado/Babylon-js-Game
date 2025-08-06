@@ -13,6 +13,7 @@
     "vite": "^6.2.3"
   },
   "dependencies": {
+    "@babylonjs/gui": "^7.54.3",
     "earcut": "^3.0.1"
   }
 }

@@ -1,7 +1,9 @@
 // Add this to your scene creation function, after the light creation
 import * as BABYLON from '@babylonjs/core';
+import * as GUI from '@babylonjs/gui';
+
 // Create coordinate gizmo
-export function createCoordinateGizmo (scene) {
+export function createCoordinateGizmo (scene, camera, engine) {
     const gizmo = new BABYLON.TransformNode("coordinateGizmo", scene);
     
     // X-axis (red) - points right
@@ -51,10 +53,10 @@ export function createCoordinateGizmo (scene) {
     zTip.parent = gizmo;
     
     // Create text labels using GUI
-    const advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("CoordinateLabels", scene);
-    
+    const advancedTexture = GUI.AdvancedDynamicTexture.CreateFullscreenUI("CoordinateLabels", scene);
+
     // X label
-    const xLabel = new BABYLON.GUI.TextBlock();
+    const xLabel = new GUI.TextBlock();
     xLabel.text = "X";
     xLabel.color = "red";
     xLabel.fontSize = 24;
@@ -62,7 +64,7 @@ export function createCoordinateGizmo (scene) {
     advancedTexture.addControl(xLabel);
     
     // Y label
-    const yLabel = new BABYLON.GUI.TextBlock();
+    const yLabel = new GUI.TextBlock();
     yLabel.text = "Y";
     yLabel.color = "green";
     yLabel.fontSize = 24;
@@ -70,7 +72,7 @@ export function createCoordinateGizmo (scene) {
     advancedTexture.addControl(yLabel);
     
     // Z label
-    const zLabel = new BABYLON.GUI.TextBlock();
+    const zLabel = new GUI.TextBlock();
     zLabel.text = "Z";
     zLabel.color = "blue";
     zLabel.fontSize = 24;
@@ -88,7 +90,8 @@ export function createCoordinateGizmo (scene) {
             xTipWorldPos,
             BABYLON.Matrix.Identity(),
             scene.getTransformMatrix(),
-            camera.viewport.toGlobal(engine.getRenderWidth(), engine.getRenderHeight())
+            camera.viewport.toGlobal(scene.getEngine().getRenderWidth(),
+                scene.getEngine().getRenderHeight())
         );
         
         const yScreenPos = BABYLON.Vector3.Project(
