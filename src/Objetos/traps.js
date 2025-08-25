@@ -46,7 +46,8 @@ export function createTraps(scene) {
     triangle2.dispose();
     const triangleFinalCSG = triangleFinal.toMesh('triangleFinal', scene);
     triangleFinalCSG.position.y = 2;
-
+    triangleFinalCSG.position.x = 3;
+    triangleFinalCSG.position.z = 3;
     
     
     return triangleFinalCSG;
